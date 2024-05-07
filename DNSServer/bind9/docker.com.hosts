@@ -1,0 +1,12 @@
+$ttl 3600
+docker.com.     IN      SOA     ubuntu. info.docker.com. (
+                        2024042005
+                        3600
+                        600
+                        1209600
+                        3600 )
+docker.com.     IN      NS      ubuntu.
+*.docker.com.   IN      A       [PROXY_SERVER_IP]
+docker.com.     IN      A       [PROXY_SERVER_IP]
+docs.docker.com.        IN      A       [PROXY_SERVER_IP]
+hub.docker.com. IN      A       [PROXY_SERVER_IP]
