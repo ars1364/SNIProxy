@@ -1,0 +1,35 @@
+options {
+    directory "/var/cache/bind";
+
+    // Specify the local network range; adjust this to your local network
+    // allow-recursion { 127.0.0.1; 192.168.0.0/16; };
+    // allow-query { 127.0.0.1; 192.168.0.0/16; };
+
+    // Bind to port 54 on local addresses only
+    // listen-on port 54 { 127.0.0.1; 192.168.0.0/16; };
+    listen-on-v6 port 54 { none; }; // Adjust if you use IPv6
+  listen-on port 54 { any; };
+
+    dnssec-validation auto;
+  forwarders {
+    8.8.8.8;
+    8.8.4.4;
+    };
+};
+
+
+
+logging {
+    channel default_syslog {
+        syslog daemon; // This sends logs to the syslog daemon
+        severity dynamic; // Adjust the severity as needed
+    };
+
+    category default {
+        default_syslog;
+    };
+
+    category queries {
+        default_syslog;
+    };
+};
