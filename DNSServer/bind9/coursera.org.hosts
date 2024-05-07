@@ -1,0 +1,10 @@
+$ttl 3600
+coursera.org.   IN      SOA     ubuntu. info.coursera.org. (
+                        2024042002
+                        3600
+                        600
+                        1209600
+                        3600 )
+coursera.org.   IN      NS      ubuntu.
+coursera.org.   IN      A       [PROXY_SERVER_IP]
+*.coursera.org. IN      A       [PROXY_SERVER_IP]
